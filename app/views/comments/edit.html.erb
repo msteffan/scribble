@@ -1,0 +1,8 @@
+<h2>Update a comment</h2>
+
+<%= render partial: "comment_form" %>
+
+
+<%= form_for(@comment, method: :delete) do |f| %>
+    <%= f.submit "Erase", class: "delete" %>
+<% end %>
