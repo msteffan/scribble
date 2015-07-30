@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  # skip_before_action :authenticate_user!, only: [:new, :create, :edit, :update, :delete]
   # index
   def index
       @comments = Comment.all
