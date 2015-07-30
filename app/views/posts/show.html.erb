@@ -8,7 +8,7 @@
 <%= link_to "Edit", edit_post_path %>
 
 
-<h4>Comments <%=link_to "(+)", new_post_comment_path(@post) %></h4>
+<h4>Comments </h4>
 
 <% @post.comments.each do |comment| %>
     <div class="comment">
@@ -22,5 +22,5 @@
     </div>
 <% end %>
 <!-- add comment form -->
-
+<h4>Add a new comment</h4>
 <%= render partial: "comment_form" %>

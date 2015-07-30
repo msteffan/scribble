@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
     skip_before_action :authenticate_user!, only: [:index, :show]
 
-    #   , :new, :create, :edit, :update, :delete]
   # index
   def index
       @comments = Comment.all
@@ -9,18 +8,21 @@ class CommentsController < ApplicationController
 
   #new
   def new
-      @comment = Comment.new
       @post = Post.find(params[:post_id])
+      @comment = Comment.new
+
   end
 
   #create
   def create
+      @post = Post.find(params[:post_id])
       @comment = Comment.create(comment_params)
       redirect_to post_path(@comment.post_id)
   end
 
   #show
   def show
+      @post = Post.find(params[:post_id])
       @comment = Comment.find(params[:id])
   end
 
