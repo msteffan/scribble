@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  # skip_before_action :authenticate_user!, only: [:new, :create, :edit, :update, :delete]  
+    skip_before_action :authenticate_user!, only: [:index, :show]
+        # new, :create, :edit, :update, :delete]
   # index
   def index
     @posts = Post.all
