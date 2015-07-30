@@ -1,11 +1,12 @@
 
-<div class="post">
-    <% @posts.each do |post| %>
+
+<% @posts.each do |post| %>
+    <div class="post">
         <h3><%= link_to post.title, post_path(post) %></h3>
-        <h4>Scribbled by <%= post.author + " on " + post.post_date %></h4>
+        <h5>Scribbled by <%= post.author + " on " + post.post_date %></h5>
         <%= image_tag src="#{post.photo_url}" %>
         <p>
-            <%= post.text %>
+            <%= truncate(post.text, :length => 100) %>
         </p>
+    </div>
     <% end %>
-</div>

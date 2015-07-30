@@ -10,4 +10,9 @@ class ApplicationController < ActionController::Base
   #         redirect_to "/signin"
   #     end
   # end
+
+  # def current_user
+  #   return user.find(sesion[:user_id])
+  # end
+
 end

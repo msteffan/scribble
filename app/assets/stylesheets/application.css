@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+body {
+    background-color: lightblue;
+}
+nav {
+    width: 50%;
+    margin: 0 auto;
+}
+li {
+    width: 20%;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+
+a {
+    text-decoration: none;
+}
+/*a:visited {
+    color: black;
+}*/
+
+h3 {
+    margin: 0;
+}
+.post {
+    width: 70%;
+    margin: 0 auto 10px auto;
+    background-color: lightgray;
+    border-radius: 10px;
+    padding: 10px;
+
+}
