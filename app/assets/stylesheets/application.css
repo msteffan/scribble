@@ -14,7 +14,7 @@
  *= require_self
  */
 body {
-    background-color: lightgrey;
+    background-color: #FAFAFA;
     padding: 20px;
 }
 nav {
@@ -31,9 +31,6 @@ img {
     border-radius: 3px;
 }
 
-/*a {
-    text-decoration: none;
-}*/
 a:visited {
     color: black;
 }
@@ -49,24 +46,33 @@ h3 {
     margin: 0;
 }
 .logo {
+    /*background-image: url("../images/logo.png");*/
+    position: fixed;
+    left: 30%;
     height: 300px;
     width: 40%;
     margin: 0 auto;
+    z-index: 0;
 
 }
 
 .feed {
+    position: relative;
+    z-index: 1;
     width: 80%;
-    margin: 0 auto;
+    margin: 300px 0 0 0;
     background-color: #FAFAFA;
-    border-radius: 5px;
-    padding: 10px;
+    padding-bottom: 10px;
 }
 .post {
     width: 90%;
     margin: 0 auto 10px auto;
     border-bottom: 3px dotted gray;
     padding: 10px;
+}
+
+.blog-index {
+    font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .blog-photo {
@@ -90,10 +96,20 @@ h3 {
 
 }
 
+.show-container{
+    position: relative;
+    z-index: 1;
+    width: 95%;
+    margin: 300px 0 0 0;
+    background-color: #FAFAFA;
+    padding-bottom: 10px;
+}
 .blog-text {
-    font-family: sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
 }
 .comment {
+    font-family: 'Open Sans Condensed', sans-serif;
+
     margin-left: 10px;
     border-bottom: 1px solid grey;
 }
@@ -103,6 +119,12 @@ h3 {
 
 }
 
+footer {
+    position: relative;
+    z-index: 1;
+    background-color: #FAFAFA;
+    padding-top: 30px;
+}
 
 
 .footer-text {
