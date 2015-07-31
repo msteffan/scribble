@@ -9,7 +9,9 @@
 </h4>
 <%= image_tag src="#{@post.photo_url}", :class => "blog-photo" %>
 
-<p class="full-text"><%= @post.text %></p>
+<!-- <p class="full-text"> -->
+<%= simple_format(@post.text )%>
+<!-- </p> -->
 
 <h4>Comments </h4>
 <% @post.comments.each do |comment| %>

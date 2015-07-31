@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   #create
   def create
       @post = Post.create(post_params)
-      #manually associate the current_user.id to the post 
+      #manually associate the current_user.id to the post
       @post.update({
           user_id: current_user.id
          })
