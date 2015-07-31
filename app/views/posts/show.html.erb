@@ -1,15 +1,17 @@
 <h2 class="title"><%= @post.title %></h2>
 <h4>Scribbled by <%= @post.author + " on " + @post.post_date %>
-<% if @post.author.id == current_user.id %>
-    <%= link_to " (Edit)", edit_post_path %>
-<% end %>
+<!-- if the user is the author of the post (based on user id), let him/her see the "(edit)" button -->
+<% if @user %>
+    <% if @post.user_id == @user.id %>
+        <%= link_to " (Edit)", edit_post_path %>
+        <% end %>
+    <% end %>
 </h4>
 <%= image_tag src="#{@post.photo_url}", :class => "blog-photo" %>
 
 <p class="full-text"><%= @post.text %></p>
 
 <h4>Comments </h4>
-
 <% @post.comments.each do |comment| %>
     <div class="comment">
         <p>
@@ -17,9 +19,19 @@
         </p>
         <p class="comment-details">
             <%= comment.author + " on " + comment.post_date%>
-            <%= link_to "(edit)", edit_post_comment_path(@post, comment) %>
+                <!-- if the user is the author of the post (based on user id), let him/her see the "(edit)" button -->
+                <% if @user %>
+                    <% if comment.user_id == @user.id %>
+                        <%= link_to "(edit)", edit_post_comment_path(@post, comment) %>
+                    <% end %>
+                <% end %>
+
         </p>
     </div>
 <% end %>
-<!-- add comment form -->
-<h4><%= link_to "Add a new comment", new_post_comment_path(@post)%> </h4>
+<!-- If the user is logged in, prompt to sign in to comment. Otherwise, link to add a new comment -->
+<% if !current_user %>
+    <h4><%= link_to "Sign in to comment", new_user_session_path %> </h4>
+<% elsif @post.user_id == @user.id %>
+    <h4><%= link_to "Add a new comment", new_post_comment_path(@post)%> </h4>
+<% end %>

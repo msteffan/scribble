@@ -5,6 +5,8 @@ class CreateComment < ActiveRecord::Migration
         t.string :comment_text
         t.string :post_date
         t.references :post, index: true, foreign_key: true
+        t.references :user, index: true, foreign_key: true
+
     end
   end
 end

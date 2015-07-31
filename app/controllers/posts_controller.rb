@@ -13,26 +13,32 @@ class PostsController < ApplicationController
   #create
   def create
       @post = Post.create(post_params)
+      #manually associate the current_user.id to the post 
+      @post.update({
+          user_id: current_user.id
+         })
       redirect_to post_path(@post)
   end
 
   #show
   def show
       @post = Post.find(params[:id])
+      @user = current_user
       @comment = Comment.new
   end
 
   #edit
   def edit
       @post = Post.find(params[:id])
+
   end
 
   #update
   def update
       @post = Post.find(params[:id])
-    #   if current_user.id == @post.user.id
-    #       @post.update(post_params)
-    #   end
+      #if current_user.id == @post.user_id
+     @post.update(post_params)
+     # end
       redirect_to post_path(@post)
   end
 
@@ -46,6 +52,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-      params.require(:post).permit(:title, :author, :text, :post_date, :photo_url)
+      params.require(:post).permit(:title, :author, :text, :post_date, :photo_url, :user_id)
   end
 end

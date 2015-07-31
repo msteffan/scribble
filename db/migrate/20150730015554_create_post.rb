@@ -6,6 +6,7 @@ class CreatePost < ActiveRecord::Migration
         t.string :author
         t.string :post_date
         t.string :photo_url
+        t.references :user, index: true, foreign_key: true
     end
   end
 end

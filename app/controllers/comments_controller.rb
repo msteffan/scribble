@@ -17,6 +17,9 @@ class CommentsController < ApplicationController
   def create
       @post = Post.find(params[:post_id])
       @comment = @post.comments.create(comment_params)
+      @comment.update({
+          user_id: current_user.id
+         })
       redirect_to post_path(@comment.post_id)
   end
 
@@ -24,12 +27,14 @@ class CommentsController < ApplicationController
   def show
       @post = Post.find(params[:post_id])
       @comment = Comment.find(params[:id])
+      @user = current_user
   end
 
   #edit
   def edit
       @post = Post.find(params[:post_id])
       @comment = @post.comments.find(param[:id])
+      @user = current_user
   end
 
   #update
