@@ -2,7 +2,7 @@
 <div class="feed">
 <% @posts.each do |post| %>
     <div class="post">
-        <h3><%= link_to post.title, post_path(post) %></h3>
+        <h3 class="headline"><%= link_to post.title, post_path(post) %></h3>
         <h5>Scribbled by <%= post.author + " on " + post.post_date %></h5>
         <%= image_tag src="#{post.photo_url}", :class => "blog-photo" %>
         <p>

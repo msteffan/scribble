@@ -10,7 +10,7 @@
 <%= image_tag src="#{@post.photo_url}", :class => "blog-photo" %>
 
 <!-- <p class="full-text"> -->
-<%= simple_format(@post.text )%>
+<%= simple_format(@post.text, :class => "blog-text") %>
 <!-- </p> -->
 
 <h4>Comments </h4>
