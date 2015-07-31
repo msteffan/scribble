@@ -123,6 +123,9 @@ h3 {
     font-size: .75em;
 
 }
+.comment-form {
+    padding-top: 300px;
+}
 
 footer {
     position: relative;

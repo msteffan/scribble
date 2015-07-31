@@ -33,9 +33,10 @@
     </div>
 <% end %>
 <!-- If the user is logged in, prompt to sign in to comment. Otherwise, link to add a new comment -->
-<% if !current_user %>
+
+<% if @user == nil %>
     <h4><%= link_to "Sign in to comment", new_user_session_path %> </h4>
-<% elsif @post.user_id == @user.id %>
+<% elsif %>
     <h4><%= link_to "Add a new comment", new_post_comment_path(@post)%> </h4>
 <% end %>
 </div>

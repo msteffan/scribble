@@ -33,7 +33,7 @@ class CommentsController < ApplicationController
   #edit
   def edit
       @post = Post.find(params[:post_id])
-      @comment = @post.comments.find(param[:id])
+      @comment = @post.comments.find(params[:id])
       @user = current_user
   end
 
@@ -50,7 +50,7 @@ class CommentsController < ApplicationController
       @comment = Comment.find(params[:id])
       @post = Post.find(params[:post_id])
       @comment.destroy
-      redirect_to post_comment_path(@post)
+      redirect_to post_path(@post)
   end
 
   private
