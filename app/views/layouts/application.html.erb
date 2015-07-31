@@ -7,22 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <header>
-        <h1><%= link_to "Scribble Blog", posts_path %></h1>
+    <header class="logo">
+        <%=link_to (image_tag("logo.png")), posts_path %>
     </header>
-    <nav>
-        <ul>
-            <li><%= link_to "Sign up", new_user_registration_path%></li>
-            <li><%= link_to "Sign in", new_user_session_path%></li>
-            <li><%= link_to "Sign out",   destroy_user_session_path, :method => :delete  %></li>
-            <li>
-                <%= link_to "New Post", new_post_path %>
 
-            </li>
-        </ul>
-    </nav>
+        <%= yield %>
+    <footer>
+        <nav>
+            <ul>
+                <li><%= link_to "Sign up", new_user_registration_path%></li>
+                <li><%= link_to "Sign in", new_user_session_path%></li>
+                <li><%= link_to "Sign out",   destroy_user_session_path, :method => :delete  %></li>
+                <li>
+                    <%= link_to "New Post", new_post_path %>
 
-<%= yield %>
-
+                </li>
+            </ul>
+        </nav>
+        <p class="footer-text">Content copyright Scribble 2K15</p>
+    </footer>
 </body>
 </html>

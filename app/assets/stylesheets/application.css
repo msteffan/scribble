@@ -14,10 +14,11 @@
  *= require_self
  */
 body {
-    background-color: lightblue;
+    background-color: lightgrey;
+    padding: 20px;
 }
 nav {
-    width: 50%;
+    width: 40%;
     margin: 0 auto;
 }
 li {
@@ -26,22 +27,76 @@ li {
     display: inline-block;
 }
 
+img {
+    border-radius: 3px;
+}
 
-a {
+/*a {
+    text-decoration: none;
+}*/
+a:visited {
+    color: black;
+}
+h1{
+    text-align: center;
+
+}
+h1 a {
     text-decoration: none;
 }
-/*a:visited {
-    color: black;
-}*/
 
 h3 {
     margin: 0;
 }
-.post {
-    width: 70%;
-    margin: 0 auto 10px auto;
-    background-color: lightgray;
-    border-radius: 10px;
-    padding: 10px;
+.logo {
+    height: 300px;
+    width: 40%;
+    margin: 0 auto;
 
+}
+
+.feed {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #FAFAFA;
+    border-radius: 5px;
+    padding: 10px;
+}
+.post {
+    width: 90%;
+    margin: 0 auto 10px auto;
+    border-bottom: 3px dotted gray;
+    padding: 10px;
+}
+
+.blog-photo {
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 2em;
+}
+
+.full-text {
+    padding-bottom: 20px;
+    border-bottom: 5px dotted grey;
+}
+.comment {
+    margin-left: 10px;
+    border-bottom: 1px solid grey;
+}
+.comment-details {
+    margin-left: 10px;
+    font-size: .75em;
+
+}
+
+
+
+.footer-text {
+    text-align: center;
+    font-size: .75em;
+    font-style: italic;
 }
